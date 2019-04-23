@@ -1,0 +1,5 @@
+require 'httparty'
+require 'pry'
+require 'require_all'
+require 'json'
+require_rel '../../lib'
