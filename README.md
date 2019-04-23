@@ -36,4 +36,10 @@ To run component-test
 docker-compose run component-test
 ```
 
+## How to delete all local container
 
+docker rm -f $(docker ps -a -q)
+
+## How to delete all local docker images
+
+docker rmi -f $(docker images -q) 

@@ -6,4 +6,3 @@ gem 'httparty'
 gem 'json', '~> 2.2'
 gem 'pry'
 gem 'require_all'
-
