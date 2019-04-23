@@ -1,0 +1,21 @@
+app-server:
+  build: .
+  ports:
+    - 8080:8080
+  links:
+   - test-mysql
+
+test-mysql:
+  image: mysql/mysql-server:latest
+  environment:
+    - MYSQL_ROOT_PASSWORD=mypassword
+
+component-test:
+  build: component-test
+  links:
+    - app-server
+    - test-mysql
+  volumes:
+    - .:/opt/project
+  working_dir: /opt/project
+  entrypoint: "/opt/project/component-test/bin/cucumber.sh"
