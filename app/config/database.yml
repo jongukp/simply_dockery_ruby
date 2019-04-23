@@ -1,0 +1,6 @@
+adapter: mysql2
+host: test-mysql
+port: 3306
+username: root
+password: mypassword
+databse: users
