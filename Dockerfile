@@ -2,7 +2,7 @@ FROM ruby:2.6.3
 
 RUN mkdir -p opt/service/app
 WORKDIR /opt/service/app
-COPY ./app/* /opt/service/app/
+COPY ./app/ /opt/service/app/
 RUN ls -l /opt/service/app
 COPY init.d/start.sh /opt/service/start.sh
 

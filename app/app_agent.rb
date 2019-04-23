@@ -4,10 +4,12 @@ require 'webrick'
 require 'pathname'
 require 'require_all'
 
-# require_rel 'lib'
+require_rel 'lib'
 
 class AppAgent < Sinatra::Base
   set :logging, true
+
+  register Sinatra::UserAgent
 
   before do
     request.body.rewind
@@ -19,32 +21,13 @@ class AppAgent < Sinatra::Base
   end
 
   post '/init' do
+    # TODO:
     # write schema
     # user tables object
     # search schema from object
+    # refactor to different class
   end
 
-  get '/users' do
-    # TODO: use mysql to retrieve data
-    content_type :json
-    { name: 'wookie' }.to_json
-  end
-
-  get '/users/:name' do
-    # TODO: use sql to retrieve data
-  end
-
-  post '/users/:name' do
-    # TODO: use sql to add data
-  end
-
-  put 'users/:name' do
-    # TODO: use sql to update data
-  end
-
-  delete '/users/:name' do
-    # TODO: use sql to delete data
-  end
 end
 
 webrick_options = {
