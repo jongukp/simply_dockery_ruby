@@ -21,13 +21,12 @@ class AppAgent < Sinatra::Base
   end
 
   post '/init' do
-    # TODO:
-    # write schema
-    # user tables object
-    # search schema from object
-    # refactor to different class
+    # TODO: connect to the db
+    # TODO: write schema
+    # TODO: user tables object
+    # TODO: search schema from object
+    # TODO: refactor to different class
   end
-
 end
 
 webrick_options = {

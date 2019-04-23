@@ -10,10 +10,3 @@ mkdir -p ../test-reports
 cd "$HERE"/..
 echo "Running Cucumber Tests from $(pwd)..."
 /usr/local/bundle/bin/cucumber ./features/ "$@"
-
-#set -e
-#
-#echo "Running Component Test..."
-#
-#mkdir -p ../test-reports
-#/usr/local/bundle/bin/cucumber "$@"
