@@ -15,12 +15,16 @@ class AppAgent < Sinatra::Base
     request.body.rewind
   end
 
+
+
   get '/status' do
     content_type :json
     { response: 'OK' }.to_json
   end
 
   post '/init' do
+    @sql = SqlHelper.new
+    @sql.create_user_table
     # TODO: connect to the db
     # TODO: write schema
     # TODO: user tables object

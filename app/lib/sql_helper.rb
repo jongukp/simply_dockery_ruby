@@ -1,11 +1,13 @@
-require 'active_record'
+require 'mysql2'
 
 class SqlHelper
   def initialize
-    @connection = ActiveRecord::Base.establish_connection(adapter: 'mysql',
-                                                          host: 'test-mysql',
-                                                          username: 'root',
-                                                          password: 'mypassword',
-                                                          databse: 'users')
+    @connection = Mysql2::Client.new(host: 'test-mysql',
+                                     username: 'root',
+                                     password: 'mypassword')
+  end
+
+  def create_user_table
+    @connection.query("CREATE TABLE Users (UserName varchar(255);")
   end
 end
